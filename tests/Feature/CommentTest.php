@@ -21,7 +21,7 @@ class CommentTest extends TestCase
             'post_id' => $post->id,
         ]);
 
-        $this->json('GET', '/api/posts/' . $post->id, [])
+        $this->json('GET', '/api/comments/' . $comment->id, [])
             ->assertStatus(401)
             ->assertJson([
                 'message' => 'Unauthenticated.'
