@@ -67,6 +67,10 @@ With laravel's Authentication feature, user can login, register user and logout 
 
 
 ## REST API Endpoints
+
+You can use Postman to test the API endpoints \
+Just import the [collection file](https://github.com/axlmartini/blog_api/tree/master/postman) to your Postman. \
+And update request payloads of your preference 
 ### Login
   URL: http://localhost:8000/api/login \
   Method: POST \
@@ -93,22 +97,26 @@ With laravel's Authentication feature, user can login, register user and logout 
 ### Logout
   URL: http://localhost:8000/api/logout \
   Method: POST \
-  Authorization: Bearer Token (add token from login)
+  Authorization: Bearer Token (add token from login) \
+  Note: Unauthorized user is restricted
 
 ### Get All Posts
   URL: http://localhost:8000/api/posts \
   Method: POST \
-  Authorization: Bearer Token (add token from login)
+  Authorization: Bearer Token (add token from login) \
+  Note: Unauthorized user is restricted
   
 ### Get Single Post
   URL: http://localhost:8000/api/posts/1 \
   Method: POST \
-  Authorization: Bearer Token (add token from login)
+  Authorization: Bearer Token (add token from login) \
+  Note: Unauthorized user is restricted
   
 ### Create Post
   URL: http://localhost:8000/api/posts/1 \
   Method: POST \
   Authorization: Bearer Token (add token from login) \
+  Note: Unauthorized user is restricted \
   Request Payload:
   ```
   {
@@ -120,6 +128,7 @@ With laravel's Authentication feature, user can login, register user and logout 
   URL: http://localhost:8000/api/posts/5 \
   Method: PUT \
   Authorization: Bearer Token (add token from login) \
+  Note: Unauthorized user is restricted \
   Request Payload:
   ```
   {
@@ -132,22 +141,26 @@ With laravel's Authentication feature, user can login, register user and logout 
   URL: http://localhost:8000/api/posts/5 \
   Method: DELETE \
   Authorization: Bearer Token (add token from login) \
+  Note: Unauthorized user is restricted \
   Note: Cannot delete post with assoicated comment/s.
   
 ### Get All Comments
   URL: http://localhost:8000/api/comments \
   Method: POST \
-  Authorization: Bearer Token (add token from login)
+  Authorization: Bearer Token (add token from login) \
+  Note: Unauthorized user is restricted
   
 ### Get Single Comments
   URL: http://localhost:8000/api/comments/1 \
   Method: POST \
-  Authorization: Bearer Token (add token from login)
+  Authorization: Bearer Token (add token from login) \
+  Note: Unauthorized user is restricted
   
 ### Create Comments
   URL: http://localhost:8000/api/comments/1 \
   Method: POST \
   Authorization: Bearer Token (add token from login) \
+  Note: Unauthorized user is restricted \
   Request Payload:
   ```
   {
@@ -159,6 +172,7 @@ With laravel's Authentication feature, user can login, register user and logout 
   URL: http://localhost:8000/api/comments/5 \
   Method: PUT \
   Authorization: Bearer Token (add token from login) \
+  Note: Unauthorized user is restricted \
   Request Payload:
   ```
   {
@@ -171,6 +185,7 @@ With laravel's Authentication feature, user can login, register user and logout 
   URL: http://localhost:8000/api/comments/5 \
   Method: DELETE \
   Authorization: Bearer Token (add token from login) \
+  Note: Unauthorized user is restricted
 
 
 ## Running Test
