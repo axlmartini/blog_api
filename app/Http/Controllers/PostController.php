@@ -33,6 +33,7 @@ class PostController extends Controller
     public function delete(Request $request, Post $post)
     {
         $postComments = $post->comments()->get();
+        $status = 200;
         if (0 === sizeof($postComments)) {
             $post->delete();
             $result = [
@@ -42,8 +43,9 @@ class PostController extends Controller
             $result = [
                 'message' => 'Cannot delete record. Associated with Comment.'
             ];
+            $status = 400;
         }
 
-        return response()->json($result, 200);
+        return response()->json($result, $status);
     }
 }

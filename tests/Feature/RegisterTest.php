@@ -15,7 +15,7 @@ class RegisterTest extends TestCase
             'password_confirmation' => 'tester_user_reg',
         ];
 
-        $this->json('post', '/api/register', $payload)
+        $response = $this->json('post', '/api/register', $payload)
             ->assertStatus(201)
             ->assertJsonStructure([
                 'data' => [
@@ -28,7 +28,7 @@ class RegisterTest extends TestCase
             ]);
 
         // delete eventually
-        $registeredUser = User::firstWhere('email', 'tester_user_reg@mail.com');
+        $registeredUser = User::find(json_decode($response->getContent())->data->id);
         $this->clearAddedData($registeredUser);
     }
 

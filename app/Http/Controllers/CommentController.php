@@ -11,7 +11,7 @@ class CommentController extends Controller
     {
         return Comment::all();
     }
- 
+
     public function show(Comment $comment)
     {
         return $comment;
@@ -33,7 +33,10 @@ class CommentController extends Controller
     public function delete(Request $request, Comment $comment)
     {
         $comment->delete();
+        $result = [
+            'message' => 'Record has been deleted.'
+        ];
 
-        return response()->json(null, 204);
+        return response()->json($result, 200);
     }
 }
