@@ -26,7 +26,7 @@ cd ~/blog_api/
 2) Configure the project's env file
 
 ```
-cp .env.dist .env
+cp .env.example .env
 ```
 **NOTE:** Update your .env db credentials accordingly
 
